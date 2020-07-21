@@ -1,21 +1,13 @@
 <template>
     <v-app-bar
             app
-            color="primary"
             dark
 
     >
-        <div class="d-flex align-center">
-            <v-img
-                    alt="Vuetify Logo"
-                    class="shrink mr-3"
-                    contain
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png"
-                    transition="scale-transition"
-                    width="40"
-            />
-
-            <h1>Daniel Sobieraj</h1>
+        <div class="d-flex align-center ml-5">
+            <h1
+                    class="navbar-title"
+            >Daniel Sobieraj</h1>
         </div>
 
         <v-spacer></v-spacer>
@@ -42,7 +34,7 @@
             <span class="mr-2">Kontakt</span>
         </v-btn>
         <v-app-bar-nav-icon
-            class="d-md-none"
+                class="d-md-none"
         >
             <v-btn
                     href="https://github.com/vuetifyjs/vuetify/releases/latest"
@@ -71,15 +63,20 @@
 
 <script>
     export default {
-        name: "Navbar"
+        name: 'NavBar',
+        data() {
+            return {
+
+            }
+        }
     }
 </script>
 
 <style scoped>
-h1 {
-    font-family: Roboto,serif;
-    font-weight: 300;
-    Size: 6rem;
-    letter-spacing: .1rem;
-}
+    .navbar-title {
+        font-family: Roboto, serif;
+        font-weight: 400;
+        Size: 6rem;
+        letter-spacing: .1rem;
+    }
 </style>
