@@ -1,26 +1,41 @@
 <template>
-  <v-app>
-    <navbar/>
-    <v-main>
-      <Main/>
-    </v-main>
-  </v-app>
+    <v-app>
+        <Navbar/>
+        <Hero/>
+        <Main/>
+    </v-app>
 </template>
 
 <script>
-import Main from './components/Main';
-import Navbar from "./components/Navbar";
+    import Navbar from "./components/Navbar";
+    import Hero from './components/Hero';
+    import Main from "./components/Main";
 
-export default {
-  name: 'App',
+    export default {
+        name: 'App',
 
-  components: {
-    Main,
-    Navbar
-  },
+        components: {
+            Navbar,
+            Hero,
+            Main
+        },
 
-  data: () => ({
-    //
-  }),
-};
+        data: () => ({
+            //
+        }),
+    };
 </script>
+
+<style lang="scss">
+    @import url('https://fonts.googleapis.com/css2? family=Open+Sans&display=swap');
+
+    $body-font-family: 'Open Sans';
+
+    #app, h2 {
+        font-family: $body-font-family, sans-serif !important;
+    }
+
+    .v-application {
+        font-family: $body-font-family, sans-serif !important;
+    }
+</style>

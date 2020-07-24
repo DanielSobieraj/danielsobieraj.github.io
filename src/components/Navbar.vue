@@ -1,64 +1,70 @@
 <template>
-    <v-app-bar
-            app
-            dark
+    <v-container-fluid>
+        <v-toolbar
+                app
+                dark
 
-    >
-        <div class="d-flex align-center ml-5">
-            <h1
-                    class="navbar-title"
-            >Daniel Sobieraj</h1>
-        </div>
+        >
+            <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-toolbar-title>
+                <h2
+                        class="navbar-title"
+                >Daniel Sobieraj</h2>
+            </v-toolbar-title>
 
-        <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
+            <v-toolbar-items class="hidden-sm-and-down">
+                <v-btn
+                        target="_blank"
+                        text
+                        rounded
+                >
+                    <span class="mr-2">O mnie</span>
+                </v-btn>
+                <v-btn
+                        text
+                        rounded
+                >
+                    <span class="mr-2">Portfolio</span>
+                </v-btn>
+                <v-btn
+                        href="/omnie"
+                        target="_blank"
+                        text
+                        rounded
+                >
+                    <span class="mr-2">Kontakt</span>
+                </v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
 
-        <v-btn
-                href="https://github.com/vuetifyjs/vuetify/releases/latest"
-                target="_blank"
-                text
-        >
-            <span class="mr-2">O mnie</span>
-        </v-btn>
-        <v-btn
-                href="https://github.com/vuetifyjs/vuetify/releases/latest"
-                target="_blank"
-                text
-        >
-            <span class="mr-2">Portfolio</span>
-        </v-btn>
-        <v-btn
-                href="https://github.com/vuetifyjs/vuetify/releases/latest"
-                target="_blank"
-                text
-        >
-            <span class="mr-2">Kontakt</span>
-        </v-btn>
-        <v-app-bar-nav-icon
-                class="d-md-none"
-        >
+        <v-navigation-drawer
+                v-model="drawer"
+                class="v-navigation-drawer--absolute"
+                dark>
             <v-btn
-                    href="https://github.com/vuetifyjs/vuetify/releases/latest"
                     target="_blank"
                     text
+                    rounded
             >
                 <span class="mr-2">O mnie</span>
             </v-btn>
             <v-btn
-                    href="https://github.com/vuetifyjs/vuetify/releases/latest"
-                    target="_blank"
                     text
+                    rounded
             >
                 <span class="mr-2">Portfolio</span>
             </v-btn>
             <v-btn
-                    href="https://github.com/vuetifyjs/vuetify/releases/latest"
+                    href="/omnie"
                     target="_blank"
                     text
+                    rounded
             >
                 <span class="mr-2">Kontakt</span>
             </v-btn>
-        </v-app-bar-nav-icon>
-    </v-app-bar>
+        </v-navigation-drawer>
+    </v-container-fluid>
 </template>
 
 <script>
@@ -66,17 +72,23 @@
         name: 'NavBar',
         data() {
             return {
-
+                drawer: false
             }
         }
     }
 </script>
 
-<style scoped>
+<style lang="css">
     .navbar-title {
-        font-family: Roboto, serif;
         font-weight: 400;
         Size: 6rem;
         letter-spacing: .1rem;
+    }
+
+    .v-navigation-drawer__content {
+        height: 30vh!important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around
     }
 </style>

@@ -1,17 +1,23 @@
 <template>
-  <v-parallax
-          dark
-          src="../assets/hero.jpg"
-  />
+<v-app>
+    <omnie/>
+    <portfolio/>
+</v-app>
 </template>
 
 <script>
-  export default {
-    name: 'Main',
-    data() {
-      return {
+    import omnie from "./omnie";
+    import portfolio from "./portfolio";
 
-      }
+    export default {
+        name: "Main",
+        components: {
+            omnie,
+            portfolio
+        },
     }
-  }
 </script>
+
+<style scoped>
+
+</style>
